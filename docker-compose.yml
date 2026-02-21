@@ -1,0 +1,22 @@
+services:
+  monitoring:
+    build: .
+    container_name: monitoring
+    privileged: false
+    cap_add:
+      - SYSLOG
+    environment:
+      - GLANCES_OPT=-w
+      - TZ=${TZ:-America/Los_Angeles}
+      - MQTT_HOST=${MQTT_HOST}
+      - MQTT_PORT=${MQTT_PORT:-1883}
+      - MQTT_USER=${MQTT_USER}
+      - MQTT_PASSWORD=${MQTT_PASSWORD}
+      - TOPIC_PREFIX=${TOPIC_PREFIX:-server}
+      - LOOP_INTERVAL=${LOOP_INTERVAL:-300}
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+      - /:/host:ro
+    ports:
+      - "${GLANCES_PORT:-61208}:61208"
+    restart: unless-stopped
