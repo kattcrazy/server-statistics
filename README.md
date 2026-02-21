@@ -4,8 +4,7 @@ Single Docker container that monitors your server and publishes to MQTT with Hom
 
 For Homeassistant Docker running on Linux only!
 
-> This is a personal project and I will not be assisting with issues.
-> I will, however, push any updates or changes that I make
+> This is a personal project and I will not be assisting with issues. I will, however, push any updates or changes that I make.
 > I may later also share the code I use for my dashboard. 
 
 ## Features
