@@ -64,11 +64,33 @@ Single Docker container that monitors your server and publishes to MQTT with Hom
 
 ## Home Assistant Entities
 
-After starting, these entities auto-appear:
+### MQTT Sensors (auto-discovered)
+After starting, these entities auto-appear under device "Server Monitor":
 - `sensor.*_status`, `sensor.*_health`, `sensor.*_cpu`, etc. for each container
 - `sensor.updates_available`, `sensor.update_status`
 - `sensor.io_errors`, `sensor.last_io_error`
 - `button.run_server_updates` - Triggers apt upgrade
+
+### Glances Integration Entities
+Add via: Settings → Integrations → Add → Glances (host: your-server-ip, port: 61208)
+
+| Entity | Description |
+|--------|-------------|
+| `sensor.*_cpu_used` | CPU usage % |
+| `sensor.*_ram_used` | RAM usage % |
+| `sensor.*_ram_used_percent` | RAM usage in bytes |
+| `sensor.*_swap_used` | Swap usage % |
+| `sensor.*_disk_used_*` | Disk usage % per mount |
+| `sensor.*_disk_free_*` | Disk free space per mount |
+| `sensor.*_network_rx_*` | Network receive rate (bytes/s) |
+| `sensor.*_network_tx_*` | Network transmit rate (bytes/s) |
+| `sensor.*_load_1min` | 1-minute load average |
+| `sensor.*_load_5min` | 5-minute load average |
+| `sensor.*_load_15min` | 15-minute load average |
+| `sensor.*_uptime` | System uptime |
+| `sensor.*_cpu_thermal` | CPU temperature (if available) |
+
+*Note: Entity names are prefixed with your Glances integration name (e.g., `sensor.server_cpu_used`)*
 
 ## Requirements
 
