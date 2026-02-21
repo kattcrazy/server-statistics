@@ -2,6 +2,8 @@
 
 Single Docker container that monitors your server and publishes to MQTT with Home Assistant auto-discovery.
 
+For Homeassistant Docker running on Linux onlu!
+
 ## Features
 
 - **Glances** - Host-level CPU, RAM, disk, network via web API
