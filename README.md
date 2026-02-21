@@ -100,6 +100,6 @@ Add via: Settings → Integrations → Add → Glances (host: your-server-ip, po
 
 ## Requirements
 
-- Docker with docker-compose
+- Docker with docker compose
 - MQTT broker (e.g., Mosquitto)
 - Home Assistant with MQTT & Glances integration
