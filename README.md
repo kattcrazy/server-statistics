@@ -108,3 +108,7 @@ Add via: Settings → Integrations → Add → Glances (host: your-server-ip, po
 - Docker with docker compose
 - MQTT broker (e.g., Mosquitto)
 - Home Assistant with MQTT & Glances integration
+
+## Credits
+
+- [Glances](https://github.com/nicolargo/glances) by Nicolas Hennion (@nicolargo) - The excellent cross-platform system monitoring tool that powers the host-level metrics in this project.
