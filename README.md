@@ -13,18 +13,24 @@ Single Docker container that monitors your server and publishes to MQTT with Hom
 
 ## Setup
 
-1. Copy `.env.example` to `.env` and configure:
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/kattcrazy/server-statistics.git
+   cd server-statistics
+   ```
+
+2. Copy `.env.example` to `.env` and configure:
    ```bash
    cp .env.example .env
    nano .env  # Edit with your MQTT settings
    ```
 
-2. Build and run:
+3. Build and run:
    ```bash
    docker compose up -d --build
    ```
 
-3. In Home Assistant:
+4. In Home Assistant:
    - **Glances**: Settings → Integrations → Add → Glances (host: your-server-ip, port: 61208)
    - **MQTT sensors**: Automatically discovered under device "Server Monitor"
 
